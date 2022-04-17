@@ -1,9 +1,11 @@
 import * as React from 'react';
+import "../App.css";
 
-export default function Boards() {
+
+export default function Board() {
     return (
         <div>
-            <h1>Boards</h1>
+            <h1>Board</h1>
         </div>
     );
 }
