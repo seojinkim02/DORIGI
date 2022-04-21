@@ -1,0 +1,22 @@
+/*FONT*/
+
+@font-face {
+    font-family: 'SpoqaBold';
+    src: url('../fonts/SpoqaHanSansNeo-Bold.otf');
+}
+@font-face {
+    font-family: 'SpoqaRegular';
+    src: url('../fonts/SpoqaHanSansNeo-Regular.otf');
+}
+@font-face {
+    font-family: 'SpoqaMedium';
+    src: url('../fonts/SpoqaHanSansNeo-Medium.otf');
+}
+@font-face {
+    font-family: 'SpoqaThin';
+    src: url('../fonts/SpoqaHanSansNeo-Thin.otf');
+}
+@font-face {
+    font-family: 'SpoqaLight';
+    src: url('../fonts/SpoqaHanSansNeo-Light.otf');
+}
