@@ -1,25 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
+
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+
+import Main from "./Pages/Main";
+import Board from "./Pages/Board";
+import Restaurant from "./Pages/Restaurant";
+import Chatting from "./Pages/Chatting";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+
+
+const theme = createTheme();
+
+//section data type -> interface
+interface section {
+    title:string;
+    url:string;
+}
+
+const sections:section[] = [
+  { title: "게시판", url: "/board" },
+  { title: "채팅", url: "/chat" },
+  { title: "맛집지도", url: "/restaurant" },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+      <div className="App">
+          <ThemeProvider theme={theme}>
+              <Header sections={sections}/>
+          <Routes>
+              <Route path="/" element={<Main/>}/>
+              <Route path="/board" element={<Board/>}/>
+              <Route path="/chat" element={<Chatting/>}/>
+              <Route path="/restaurant" element={<Restaurant/>}/>
+          </Routes>
+          <Footer title={"title"} description={"@DORIGI, Inc. 2022. 2022-DORIGI-TeamI"}/>
+      </ThemeProvider>
+      </div>
+      </Router>
   );
 }
 
